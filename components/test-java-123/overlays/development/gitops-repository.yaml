@@ -1,0 +1,13 @@
+apiVersion: "pipelinesascode.tekton.dev/v1alpha1"
+kind: Repository
+metadata:
+  name: test-java-123-gitops-repository
+spec:
+  url: https://github.com/stephanie-cy/test-java-123-gitops
+  git_provider:
+    secret:
+        name: "gitops-auth-secret"
+        key: "password"
+    webhook_secret:
+        name: "rhtap-pipelines-secret"
+        key: "webhook-github-secret"
